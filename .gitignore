@@ -1,0 +1,39 @@
+# NetBeans specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+*.orig
+
+# Maven or Gradle build folders (if used)
+target/
+.gradle/
+build/
+
+# Java class files
+*.class
+
+# Logs
+*.log
+
+# Tomcat work and temp directories
+tomcat/work/
+tomcat/temp/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment / config files
+*.env
+*.iml
+*.iws
+
+# IDE-specific files (optional, in case you use other IDEs)
+*.idea/
+*.vscode/
+
+# Cache
+.cache/
