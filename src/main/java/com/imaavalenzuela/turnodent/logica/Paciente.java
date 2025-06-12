@@ -2,33 +2,32 @@ package com.imaavalenzuela.turnodent.logica;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Paciente extends Persona{
-    private int idPaciente;
+    //private int idPaciente;
     private boolean tieneObraSocial;
     private String tipoSangre;
+    @OneToOne
     private Responsable responsable;
+    @OneToMany(mappedBy = "paciente")
     private List<Turno> listaTurnos;
 
     public Paciente() {
     }
 
-    public Paciente(int idPaciente, boolean tieneObraSocial, String tipoSangre, Responsable responsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Paciente(boolean tieneObraSocial, String tipoSangre, Responsable responsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
         super(dni, nombre, apellido, telefono, direccion, fecha_nac);
-        this.idPaciente = idPaciente;
         this.tieneObraSocial = tieneObraSocial;
         this.tipoSangre = tipoSangre;
         this.responsable = responsable;
         this.listaTurnos = listaTurnos;
     }
 
-    public int getIdPaciente() {
-        return idPaciente;
-    }
 
-    public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
-    }
 
     public boolean isTieneObraSocial() {
         return tieneObraSocial;
