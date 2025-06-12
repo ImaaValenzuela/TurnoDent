@@ -19,13 +19,15 @@ public class Paciente extends Persona{
     public Paciente() {
     }
 
-    public Paciente(boolean tieneObraSocial, String tipoSangre, Responsable responsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Paciente(boolean tieneObraSocial, String tipoSangre, Responsable responsable, List<Turno> listaTurnos, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tieneObraSocial = tieneObraSocial;
         this.tipoSangre = tipoSangre;
         this.responsable = responsable;
         this.listaTurnos = listaTurnos;
     }
+
+    
 
 
 

@@ -11,11 +11,12 @@ public class Responsable extends Persona{
     public Responsable() {
     }
 
-    public Responsable(String tipo_responsable, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Responsable(String tipo_responsable, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.tipo_responsable = tipo_responsable;
     }
 
+    
 
 
     public String getTipo_responsable() {
