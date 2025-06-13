@@ -1,5 +1,7 @@
 package com.imaavalenzuela.turnodent.persistencia;
 
+import com.imaavalenzuela.turnodent.logica.Usuario;
+
 public class PersistenceController {
 
     HorarioJpaController horarioJPA;
@@ -21,5 +23,9 @@ public class PersistenceController {
      responsableJPA = new ResponsableJpaController();
      secretarioJPA = new SecretarioJpaController();
      turnoJPA = new TurnoJpaController();
+    }
+
+    public void crearUsuario(Usuario usuario) {
+        usuarioJPA.create(usuario);
     }
 }
