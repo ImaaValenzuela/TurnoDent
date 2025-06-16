@@ -8,7 +8,7 @@
     <title>TurnoDent</title>
 
     <!-- Custom fonts -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,900" rel="stylesheet">
-    <link href="css/turnodent.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/turnodent.min.css" rel="stylesheet">
 </head>

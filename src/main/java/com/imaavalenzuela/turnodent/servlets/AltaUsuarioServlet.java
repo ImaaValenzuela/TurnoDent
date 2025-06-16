@@ -35,11 +35,13 @@ public class AltaUsuarioServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nombreUsuario = request.getParameter("nombreUsu");
+        String nombreUsuario = request.getParameter("nombreUsuario");
         String contrasenia = request.getParameter("contrasenia");
         String rol = request.getParameter("rol");
         
         controller.crearUsuario(nombreUsuario, contrasenia, rol);
+        
+        response.sendRedirect("index.jsp");
     }
 
     @Override

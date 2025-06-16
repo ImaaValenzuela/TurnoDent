@@ -18,8 +18,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombre_usuario, String contrasenia, String rol) {
-        this.idUsuario = idUsuario;
+    public Usuario(String nombre_usuario, String contrasenia, String rol) {
         this.nombre_usuario = nombre_usuario;
         this.contrasenia = contrasenia;
         this.rol = rol;
