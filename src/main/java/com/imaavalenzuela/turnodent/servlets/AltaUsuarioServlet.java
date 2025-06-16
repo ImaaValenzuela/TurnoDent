@@ -5,6 +5,7 @@
 package com.imaavalenzuela.turnodent.servlets;
 
 import com.imaavalenzuela.turnodent.logica.Controller;
+import com.imaavalenzuela.turnodent.utils.Seguridad;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,7 +40,9 @@ public class AltaUsuarioServlet extends HttpServlet {
         String contrasenia = request.getParameter("contrasenia");
         String rol = request.getParameter("rol");
         
-        controller.crearUsuario(nombreUsuario, contrasenia, rol);
+        String hashPassword = Seguridad.hashPassword(contrasenia);
+        
+        controller.crearUsuario(nombreUsuario, hashPassword, rol);
         
         response.sendRedirect("index.jsp");
     }
