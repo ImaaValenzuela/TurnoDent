@@ -19,6 +19,26 @@
     </properties>
 
     <dependencies>
+        <!-- Dependencia para el servidor de aplicaciones -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>9.0.73</version>
+            <scope>provided</scope> 
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>9.0.73</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+
         <!-- API JPA (javax) -->
         <dependency>
             <groupId>javax.persistence</groupId>
