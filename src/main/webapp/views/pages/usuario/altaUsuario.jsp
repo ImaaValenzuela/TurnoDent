@@ -15,7 +15,7 @@
                     </div>
                 
                 <div class="container-fluid">
-                    <form class="user" action="${pageContext.request.contextPath}/AltaUsuarioServlet" method="POST">
+                    <form class="user" action="${pageContext.request.contextPath}/UsuarioServlet" method="POST">
                                                         <div class="form-group col">
                                     <div class="col-sm-6 mb-3">
                                         <input type="text" class="form-control form-control-user" id="nombreUsuario" name="nombreUsuario"

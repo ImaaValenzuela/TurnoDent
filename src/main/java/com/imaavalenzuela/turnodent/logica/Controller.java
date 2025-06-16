@@ -1,6 +1,8 @@
 package com.imaavalenzuela.turnodent.logica;
 
 import com.imaavalenzuela.turnodent.persistencia.PersistenceController;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
     PersistenceController controlador = new PersistenceController();
@@ -12,5 +14,11 @@ public class Controller {
         usuario.setRol(rol);
         
         controlador.crearUsuario(usuario);
+    }
+
+    public List<Usuario> getUsuarios() {
+        
+        return controlador.getUsuarios();
+        
     }
 }

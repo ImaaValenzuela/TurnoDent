@@ -1,6 +1,8 @@
 package com.imaavalenzuela.turnodent.persistencia;
 
 import com.imaavalenzuela.turnodent.logica.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PersistenceController {
 
@@ -27,5 +29,9 @@ public class PersistenceController {
 
     public void crearUsuario(Usuario usuario) {
         usuarioJPA.create(usuario);
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuarioJPA.findUsuarioEntities();
     }
 }

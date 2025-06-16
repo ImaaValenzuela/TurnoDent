@@ -5,20 +5,24 @@
 package com.imaavalenzuela.turnodent.servlets;
 
 import com.imaavalenzuela.turnodent.logica.Controller;
+import com.imaavalenzuela.turnodent.logica.Usuario;
 import com.imaavalenzuela.turnodent.utils.Seguridad;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author HP
  */
-@WebServlet(name = "AltaUsuarioServlet", urlPatterns = {"/AltaUsuarioServlet"})
-public class AltaUsuarioServlet extends HttpServlet {
+@WebServlet(name = "UsuarioServlet", urlPatterns = {"/UsuarioServlet"})
+public class UsuarioServlet extends HttpServlet {
     
     Controller controller = new Controller();
     
@@ -30,7 +34,15 @@ public class AltaUsuarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+        
+        usuarios = controller.getUsuarios();
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("listaUsuarios", usuarios);
+        
+        response.sendRedirect(request.getContextPath() + "/views/pages/usuario/verUsuarios.jsp");
     }
 
     @Override
