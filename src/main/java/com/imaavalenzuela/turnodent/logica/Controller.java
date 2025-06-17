@@ -21,4 +21,16 @@ public class Controller {
         return controlador.getUsuarios();
         
     }
+
+    public void borrarUsuario(int id) {
+        controlador.borrarUsuario(id);
+    }
+
+    public Usuario getUsuario(int id) {
+        return controlador.getUsuario(id);
+    }
+
+    public void editarUsuario(Usuario usuarioEditado) {
+        controlador.editarUsuario(usuarioEditado);
+    }
 }

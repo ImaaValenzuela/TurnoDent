@@ -30,6 +30,7 @@
                                             <th>Id</th>
                                             <th>Nombre de Usuario</th>
                                             <th>Rol</th>
+                                            <th style="width: 210px">Acción</th>
                                         </tr>
                                     </thead>
                                    
@@ -43,6 +44,21 @@
                                             <td id="id_usu<%=usu.getIdUsuario()%>"><%=usu.getIdUsuario() %>   </td>
                                             <td><%=usu.getNombre_usuario() %></td>
                                             <td><%=usu.getRol()%></td>
+                                            
+                                            <td style="display: flex; width: 230px;">
+                                                <form name="eliminar" action="${pageContext.request.contextPath}/EliminaUsuarioServlet" method="POST">
+                                                            <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-right: 5px; "> 
+                                                              Eliminar
+                                                            </button>
+                                                            <input type="hidden" name="id" value="<%=usu.getIdUsuario()%>"> 
+                                                </form>  
+                                                 <form name="editar" action="${pageContext.request.contextPath}/EditarUsuarioServlet" method="GET">
+                                                            <button type="submit" class="btn btn-primary btn-user btn-block"; style="margin-left: 5px;"> 
+                                                              Editar
+                                                            </button>
+                                                            <input type="hidden" name="id" value="<%=usu.getIdUsuario()%>">
+                                                </form>                                             
+                                            </td>
                                         </tr>      
                                         <% } %>
                                     </tbody>
