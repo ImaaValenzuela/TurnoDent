@@ -3,7 +3,6 @@
 <html lang="es">
 <%@include file="views/layout/head.jsp" %>
 <body id="page-top">
-
     <div id="wrapper">
         <%@include file="views/layout/sidebar.jsp" %>
 
