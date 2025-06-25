@@ -67,6 +67,22 @@ public class Turno {
     public void setAfeccion(String afeccion) {
         this.afeccion = afeccion;
     }
+
+    public Odontologo getOdontologo() {
+        return odontologo;
+    }
+
+    public void setOdontologo(Odontologo odontologo) {
+        this.odontologo = odontologo;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
     
 
     

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <display-name>TurnoDent</display-name>
+    
+    <!-- Configuración de CORS -->
+    <filter>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+        <init-param>
+            <param-name>cors.allowed.origins</param-name>
+            <param-value>*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.allowed.methods</param-name>
+            <param-value>GET,POST,PUT,DELETE,OPTIONS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.allowed.headers</param-name>
+            <param-value>Content-Type,Authorization</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>CORSFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
+    
+    <!-- Mapeo de servlets -->
+    <servlet>
+        <servlet-name>ApiLoginServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiLoginServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiLoginServlet</servlet-name>
+        <url-pattern>/api/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ApiUsuarioServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiUsuarioServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiUsuarioServlet</servlet-name>
+        <url-pattern>/api/usuarios</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ApiOdontologoServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiOdontologoServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiOdontologoServlet</servlet-name>
+        <url-pattern>/api/odontologos</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ApiPacienteServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiPacienteServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiPacienteServlet</servlet-name>
+        <url-pattern>/api/pacientes</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ApiTurnoServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiTurnoServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiTurnoServlet</servlet-name>
+        <url-pattern>/api/turnos</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ApiHorarioServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiHorarioServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiHorarioServlet</servlet-name>
+        <url-pattern>/api/horarios</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ApiTestServlet</servlet-name>
+        <servlet-class>com.imaavalenzuela.turnodent.servlets.ApiTestServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiTestServlet</servlet-name>
+        <url-pattern>/api/test</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Configuración de sesiones -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    
+    <!-- Configuración de codificación -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+</web-app> 
