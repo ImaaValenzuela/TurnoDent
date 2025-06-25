@@ -37,3 +37,6 @@ Thumbs.db
 
 # Cache
 .cache/
+
+# .gitignore
+node_modules/
